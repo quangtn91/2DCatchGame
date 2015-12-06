@@ -16,7 +16,9 @@ public class Score : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D ball){
 		if (ball.tag == "Ball")
 			TextScore.text = "Score: " + ++score;
-		else if (ball.tag == "Bomb")
-			TextScore.text = "Score: " + --score;
+		else if (ball.tag == "Bomb") {
+			score -= 2;
+			TextScore.text = "Score: " + score;
+		}
 	}
 }
